@@ -6,8 +6,8 @@ var fs = require('fs-extra')
 var path = require('path')
 var request = require('superagent')
 
-var data = fs.readJsonSync(path.join(__dirname, '../wallet.json'))
-var url = 'https://testnet.helloblock.io/v1/addresses/' + data.address
+var walletData = fs.readJsonSync(path.join(__dirname, '../wallet.json'))
+var url = 'https://testnet.helloblock.io/v1/addresses/' + walletData.address
 
 request.get(url).end(function(res) {
   if (res.statusCode != 200) return console.error('Response code not 200: ' + res.statusCode)
@@ -20,7 +20,7 @@ request.get(url).end(function(res) {
   var balanceBits = accounting.formatMoney(balance / 100, {symbol: 'BIT', format: '%v %s'})
 
   console.log('')
-  console.log('  balance for %s', chalk.magenta(data.address))
+  console.log('  balance for %s', chalk.magenta(walletData.address))
   console.log('')
   console.log('    %s', chalk.blue.bold(balanceBits))
   console.log('')

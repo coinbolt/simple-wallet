@@ -12,7 +12,7 @@ var rn = secureRandom.randomBuffer(32)
 
 var key = new CoinKey(rn, coinInfo('BTC-TEST').versions)
 
-var data = {
+var walletData = {
   privateKey: key.privateWif,
   address: key.publicAddress
 }
