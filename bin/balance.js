@@ -3,9 +3,10 @@
 var accounting = require('accounting')
 var chalk = require('chalk')
 var fs = require('fs-extra')
+var path = require('path')
 var request = require('superagent')
 
-var data = fs.readJsonSync('./wallet.json')
+var data = fs.readJsonSync(path.join(__dirname, '../wallet.json'))
 var url = 'https://testnet.helloblock.io/v1/addresses/' + data.address
 
 request.get(url).end(function(res) {
