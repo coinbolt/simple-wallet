@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/jp/Dropbox/Projects/Personal/talks/2014-11-nebraskajs/code/simple-wallet",
+      "folder_exclude_patterns": ["node_modules"]
+		}
+	]
+}
