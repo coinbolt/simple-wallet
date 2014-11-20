@@ -17,12 +17,12 @@ var walletData = {
   address: key.publicAddress
 }
 
-fs.writeJsonSync(path.join(__dirname, '../wallet.json'), data)
+fs.writeJsonSync(path.join(__dirname, '../wallet.json'), walletData)
 
 console.log('')
 console.log(chalk.bold('  wallet created with address:'))
 console.log('')
-console.log('    %s', chalk.magenta(data.address))
+console.log('    %s', chalk.magenta(walletData.address))
 console.log('')
 
 
