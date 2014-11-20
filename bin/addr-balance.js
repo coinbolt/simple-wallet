@@ -17,7 +17,7 @@ request.get(url).end(function(res) {
   var balance = parseInt(res.body.data.address.balance, 10)
 
   //100 satoshis per 1 bit => 1e6 bits per 1 bitcoin
-  var balanceBits = accounting.formatMoney(balance / 100, {symbol: 'BIT', format: '%v %s'})
+  var balanceBits = accounting.formatMoney(balance / 100, {symbol: 'BITS', format: '%v %s'})
 
   console.log('')
   console.log('  balance for %s', chalk.magenta(walletData.address))
